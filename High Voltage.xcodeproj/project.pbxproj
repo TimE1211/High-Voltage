@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20E885641EB221DF00C71B05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E885631EB221DF00C71B05 /* main.m */; };
+		20E885671EB221DF00C71B05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E885661EB221DF00C71B05 /* AppDelegate.m */; };
+		20E8856A1EB221DF00C71B05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E885691EB221DF00C71B05 /* ViewController.m */; };
+		20E8856D1EB221DF00C71B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E8856B1EB221DF00C71B05 /* Main.storyboard */; };
+		20E8856F1EB221DF00C71B05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20E8856E1EB221DF00C71B05 /* Assets.xcassets */; };
+		20E885721EB221DF00C71B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E885701EB221DF00C71B05 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		20E8855F1EB221DF00C71B05 /* High Voltage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "High Voltage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20E885631EB221DF00C71B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		20E885651EB221DF00C71B05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		20E885661EB221DF00C71B05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		20E885681EB221DF00C71B05 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		20E885691EB221DF00C71B05 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		20E8856C1EB221DF00C71B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20E8856E1EB221DF00C71B05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20E885711EB221DF00C71B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20E885731EB221DF00C71B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20E8855C1EB221DF00C71B05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20E885561EB221DF00C71B05 = {
+			isa = PBXGroup;
+			children = (
+				20E885611EB221DF00C71B05 /* High Voltage */,
+				20E885601EB221DF00C71B05 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20E885601EB221DF00C71B05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20E8855F1EB221DF00C71B05 /* High Voltage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20E885611EB221DF00C71B05 /* High Voltage */ = {
+			isa = PBXGroup;
+			children = (
+				20E885651EB221DF00C71B05 /* AppDelegate.h */,
+				20E885661EB221DF00C71B05 /* AppDelegate.m */,
+				20E885681EB221DF00C71B05 /* ViewController.h */,
+				20E885691EB221DF00C71B05 /* ViewController.m */,
+				20E8856B1EB221DF00C71B05 /* Main.storyboard */,
+				20E8856E1EB221DF00C71B05 /* Assets.xcassets */,
+				20E885701EB221DF00C71B05 /* LaunchScreen.storyboard */,
+				20E885731EB221DF00C71B05 /* Info.plist */,
+				20E885621EB221DF00C71B05 /* Supporting Files */,
+			);
+			path = "High Voltage";
+			sourceTree = "<group>";
+		};
+		20E885621EB221DF00C71B05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20E885631EB221DF00C71B05 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20E8855E1EB221DF00C71B05 /* High Voltage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20E885761EB221DF00C71B05 /* Build configuration list for PBXNativeTarget "High Voltage" */;
+			buildPhases = (
+				20E8855B1EB221DF00C71B05 /* Sources */,
+				20E8855C1EB221DF00C71B05 /* Frameworks */,
+				20E8855D1EB221DF00C71B05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "High Voltage";
+			productName = "High Voltage";
+			productReference = 20E8855F1EB221DF00C71B05 /* High Voltage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20E885571EB221DF00C71B05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Timothy Hang";
+				TargetAttributes = {
+					20E8855E1EB221DF00C71B05 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 852TDXMVWN;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 20E8855A1EB221DF00C71B05 /* Build configuration list for PBXProject "High Voltage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20E885561EB221DF00C71B05;
+			productRefGroup = 20E885601EB221DF00C71B05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20E8855E1EB221DF00C71B05 /* High Voltage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20E8855D1EB221DF00C71B05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E885721EB221DF00C71B05 /* LaunchScreen.storyboard in Resources */,
+				20E8856F1EB221DF00C71B05 /* Assets.xcassets in Resources */,
+				20E8856D1EB221DF00C71B05 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20E8855B1EB221DF00C71B05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E8856A1EB221DF00C71B05 /* ViewController.m in Sources */,
+				20E885671EB221DF00C71B05 /* AppDelegate.m in Sources */,
+				20E885641EB221DF00C71B05 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		20E8856B1EB221DF00C71B05 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20E8856C1EB221DF00C71B05 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		20E885701EB221DF00C71B05 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20E885711EB221DF00C71B05 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20E885741EB221DF00C71B05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		20E885751EB221DF00C71B05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20E885771EB221DF00C71B05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 852TDXMVWN;
+				INFOPLIST_FILE = "High Voltage/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tiy.High-Voltage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		20E885781EB221DF00C71B05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 852TDXMVWN;
+				INFOPLIST_FILE = "High Voltage/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tiy.High-Voltage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20E8855A1EB221DF00C71B05 /* Build configuration list for PBXProject "High Voltage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20E885741EB221DF00C71B05 /* Debug */,
+				20E885751EB221DF00C71B05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20E885761EB221DF00C71B05 /* Build configuration list for PBXNativeTarget "High Voltage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20E885771EB221DF00C71B05 /* Debug */,
+				20E885781EB221DF00C71B05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20E885571EB221DF00C71B05 /* Project object */;
+}
