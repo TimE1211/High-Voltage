@@ -8,9 +8,9 @@
 
 #import "HighVoltageTableViewController.h"
 #import "ValuePopoverTableViewController.h"
-//#import "High Voltage-Swift"
+#import "High Voltage-Swift"
 
-@interface HighVoltageTableViewController () <UIPopoverPresentationControllerDelegate, ChosenValueDelegate>
+@interface HighVoltageTableViewController () <UIPopoverPresentationControllerDelegate, ChosenValueDelegate, BrainDelegate>
 {
   NSMutableArray *allValues;
   NSMutableArray *remainingValues;
@@ -91,7 +91,6 @@ static NSString * const reuseIdentifier = @"ValueCell";
 {
   return visibleValues.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
