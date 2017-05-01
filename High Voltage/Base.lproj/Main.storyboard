@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PNc-Oc-EB7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,18 +12,34 @@
         <!--Root View Controller-->
         <scene sceneID="Cnq-z4-Qba">
             <objects>
-                <tableViewController id="fSD-mc-1ut" sceneMemberID="viewController">
+                <tableViewController id="fSD-mc-1ut" customClass="HighVoltageTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nvY-US-e1U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ucx-tI-esW">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VoltageCell" textLabel="GvB-dn-Fkr" detailTextLabel="DZz-WE-LsM" style="IBUITableViewCellStyleValue1" id="ucx-tI-esW">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ucx-tI-esW" id="kpx-tc-JRQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Value Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GvB-dn-Fkr">
+                                            <rect key="frame" x="15" y="12" width="84" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DZz-WE-LsM">
+                                            <rect key="frame" x="318" y="12" width="42" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -35,7 +51,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="uO7-sK-fXa">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VJH-oE-aCN">
                             <connections>
-                                <segue destination="gtY-sb-RRp" kind="popoverPresentation" popoverAnchorBarButtonItem="VJH-oE-aCN" id="hlu-eE-iZv">
+                                <segue destination="gtY-sb-RRp" kind="popoverPresentation" identifier="ValuePopoverSegue" popoverAnchorBarButtonItem="VJH-oE-aCN" id="hlu-eE-iZv">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -46,22 +62,49 @@
             </objects>
             <point key="canvasLocation" x="159" y="-33"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Value Popover Table View Controller-->
         <scene sceneID="Trl-Co-iAu">
             <objects>
-                <tableViewController id="gtY-sb-RRp" sceneMemberID="viewController">
+                <tableViewController id="gtY-sb-RRp" customClass="ValuePopoverTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IFI-Yx-4ul">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qgq-5u-FqV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ValueCell" id="qgq-5u-FqV" customClass="ValueCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qgq-5u-FqV" id="K6f-tq-0Ge">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-71-NyJ">
+                                            <rect key="frame" x="10" y="11" width="84" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Value Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qxb-cd-kh0">
+                                            <rect key="frame" x="104" y="6" width="261" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Qxb-cd-kh0" secondAttribute="trailing" constant="10" id="2EI-Oq-Qb3"/>
+                                        <constraint firstItem="xgi-71-NyJ" firstAttribute="leading" secondItem="K6f-tq-0Ge" secondAttribute="leading" constant="10" id="4CW-rg-bVZ"/>
+                                        <constraint firstItem="Qxb-cd-kh0" firstAttribute="leading" secondItem="xgi-71-NyJ" secondAttribute="trailing" constant="10" id="5WH-aB-6Oz"/>
+                                        <constraint firstItem="xgi-71-NyJ" firstAttribute="centerY" secondItem="K6f-tq-0Ge" secondAttribute="centerY" id="KuS-KW-aDe"/>
+                                        <constraint firstItem="Qxb-cd-kh0" firstAttribute="centerY" secondItem="K6f-tq-0Ge" secondAttribute="centerY" id="XgK-Do-u6D"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ValueInputTextField" destination="Qxb-cd-kh0" id="PMg-wb-hb2"/>
+                                    <outlet property="ValueTypeLabel" destination="xgi-71-NyJ" id="ByO-Ay-3dD"/>
+                                    <outlet property="inputValueTextField" destination="Qxb-cd-kh0" id="Pzb-wa-Pap"/>
+                                    <outlet property="valueTypeLabel" destination="xgi-71-NyJ" id="e3I-rK-2LH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -72,7 +115,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vA7-VT-U4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="-672"/>
+            <point key="canvasLocation" x="945" y="-686"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hEQ-DA-eqB">
