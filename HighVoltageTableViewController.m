@@ -69,9 +69,12 @@ static NSString * const reuseIdentifier = @"ValueCell";
   [self.navigationController dismissViewControllerAnimated:YES completion:nil];
   [visibleValues addObject:chosenValue];
   [remainingValues removeObject:chosenValue];
-  if (remainingValues.count == 0)
+  if (remainingValues.count == 2)
   {
     self.navigationItem.rightBarButtonItem.enabled = NO;
+    [visibleValues addObjectsFromArray:remainingValues];
+    [remainingValues removeAllObjects];
+    brainstuff here;
   }
   [self.tableView reloadData];
 }

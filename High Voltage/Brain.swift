@@ -17,39 +17,51 @@ class Brain
 {
   var delegate: BrainDelegate
   
-  init(delegate: BrainDelegate)                               //David told me to initialize my Class
+  init(delegate: BrainDelegate)
   {
     self.delegate = delegate
   }
   
   func calculateProblem(resistance: Double, voltage: Double, current: Double, power: Double)
   {
-//    var result = ""
-//    var resistance
-//    var voltage
-//    var current
-//    var power
-//    switch operatorString
-//    {
-//    case "+":
-//      result = String(operand1 + operand2)
-//    case "-":
-//      result = String(operand1 - operand2)
-//    case "*":
-//      result = String(operand1 * operand2)
-//    case "/":
-//      if operand2 == 0
-//      {
-//        result = "Cannot / by 0"
-//      }
-//      else
-//      {
-//        result = String(operand1 / operand2)
-//      }
-//    default:
-//      result = "Invalid operator pressed"
-//    }
+    var result = ""
+//    combo = any 2 values
+    switch combo
+    {
+    case resistance && voltage:
+      current = voltage/resistance
+      power = (voltage * voltage)/resistance
+      result = add results to table view
+      
+    case resistance && current:
+      voltage = current * resistance
+      power = current * current * resistance
+      result = add results to table view
+      
+    case resistance && power:
+      current = sqrt(power/resistance)
+      voltage = sqrt(resistance * power)
+      result = add results to table view
+      
+    case voltage && current:
+      resistance = voltage/current
+      power = voltage * current
+      result = add results to table view
+      
+    case voltage && power:
+      current = power/voltage
+      resistance = (voltage * voltage)/power
+      result = add results to table view
+      
+    case current && power:
+      voltage = power/current
+      resistance = power/(current * current)
+      result = add results to table view
+      
+    default:
+      result = "Invalid operation"
+    }
     
-//    delegate.calculatedViaBrain(brain: self, didFinishWithResult: String(result))
+    delegate.calculatedViaBrain(brain: self, didFinishWithResult: String(result))
   }
 }
