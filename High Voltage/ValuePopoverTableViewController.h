@@ -10,7 +10,7 @@
 
 @protocol ChosenValueDelegate
 
-- (void)valueWasChosen:(NSString *)chosenValue;
+- (void)valueWasChosen:(NSString *)chosenValue :(NSNumber *)inputValue;
 
 @end
 

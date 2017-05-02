@@ -11,6 +11,7 @@
 		20C47EC61EB6BAE900C223C2 /* ValuePopoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C47EC51EB6BAE900C223C2 /* ValuePopoverTableViewController.m */; };
 		20C47EC91EB6BCAB00C223C2 /* HighVoltageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C47EC81EB6BCAB00C223C2 /* HighVoltageTableViewController.m */; };
 		20C47ED01EB6C3BB00C223C2 /* ValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C47ECF1EB6C3BB00C223C2 /* ValueCell.m */; };
+		20C47ED31EB7D44D00C223C2 /* Brain.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C47ED21EB7D44D00C223C2 /* Brain.m */; };
 		20E885641EB221DF00C71B05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E885631EB221DF00C71B05 /* main.m */; };
 		20E885671EB221DF00C71B05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E885661EB221DF00C71B05 /* AppDelegate.m */; };
 		20E8856D1EB221DF00C71B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E8856B1EB221DF00C71B05 /* Main.storyboard */; };
@@ -27,6 +28,8 @@
 		20C47EC81EB6BCAB00C223C2 /* HighVoltageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighVoltageTableViewController.m; path = ../HighVoltageTableViewController.m; sourceTree = "<group>"; };
 		20C47ECE1EB6C3BB00C223C2 /* ValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValueCell.h; path = ../ValueCell.h; sourceTree = "<group>"; };
 		20C47ECF1EB6C3BB00C223C2 /* ValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ValueCell.m; path = ../ValueCell.m; sourceTree = "<group>"; };
+		20C47ED11EB7D44D00C223C2 /* Brain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brain.h; sourceTree = "<group>"; };
+		20C47ED21EB7D44D00C223C2 /* Brain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brain.m; sourceTree = "<group>"; };
 		20E8855F1EB221DF00C71B05 /* High Voltage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "High Voltage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E885631EB221DF00C71B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		20E885651EB221DF00C71B05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +79,8 @@
 				20C47ECE1EB6C3BB00C223C2 /* ValueCell.h */,
 				20C47ECF1EB6C3BB00C223C2 /* ValueCell.m */,
 				20C47EC21EB6B96800C223C2 /* Brain.swift */,
+				20C47ED11EB7D44D00C223C2 /* Brain.h */,
+				20C47ED21EB7D44D00C223C2 /* Brain.m */,
 				20E8856B1EB221DF00C71B05 /* Main.storyboard */,
 				20E8856E1EB221DF00C71B05 /* Assets.xcassets */,
 				20E885701EB221DF00C71B05 /* LaunchScreen.storyboard */,
@@ -173,6 +178,7 @@
 				20C47EC91EB6BCAB00C223C2 /* HighVoltageTableViewController.m in Sources */,
 				20C47EC61EB6BAE900C223C2 /* ValuePopoverTableViewController.m in Sources */,
 				20C47ED01EB6C3BB00C223C2 /* ValueCell.m in Sources */,
+				20C47ED31EB7D44D00C223C2 /* Brain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

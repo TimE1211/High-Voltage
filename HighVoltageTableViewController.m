@@ -5,39 +5,51 @@
 //  Created by Timothy Hang on 4/30/17.
 //  Copyright © 2017 Timothy Hang. All rights reserved.
 //
+//http://stackoverflow.com/questions/14495476/how-to-add-dictionary-data-in-to-an-array
+//http://stackoverflow.com/questions/8292248/nsdictionary-how-return-the-key-as-a-string
 
 #import "HighVoltageTableViewController.h"
 #import "ValuePopoverTableViewController.h"
-#import "High Voltage-Swift"
+#import "Brain.h"
+
+
 
 @interface HighVoltageTableViewController () <UIPopoverPresentationControllerDelegate, ChosenValueDelegate, BrainDelegate>
 {
-  NSMutableArray *allValues;
+  NSDictionary *allValues;
   NSMutableArray *remainingValues;
   NSMutableArray *visibleValues;
+  NSMutableDictionary *inputValues;
+  Brain *brain;
 }
+
 @end
 
 @implementation HighVoltageTableViewController
 
-static NSString * const reuseIdentifier = @"ValueCell";
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   self.title = @"Collect 'Em All";
   
-  allValues = [[NSMutableArray alloc] init];
-  [allValues addObject:@"resistance"];
-  [allValues addObject:@"voltage"];
-  [allValues addObject:@"current"];
-  [allValues addObject:@"power"];
+  allValues = [[NSDictionary alloc] init];
+  allValues = @{@"resistance": @"resistance",
+                @"voltage": @"voltage",
+                @"current": @"current",
+                @"power": @"power"};
+  
   remainingValues = [[NSMutableArray alloc] init];
-  [remainingValues addObjectsFromArray:allValues];
+  [remainingValues addObjectsFromArray:[allValues allKeys]];
   
   visibleValues = [[NSMutableArray alloc] init];
+  inputValues = [[NSMutableDictionary alloc] init];
   
   self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+  
+  brain = [Brain new];
+  brain.delegate = self;
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +68,7 @@ static NSString * const reuseIdentifier = @"ValueCell";
     ValuePopVC.popoverPresentationController.delegate = self;
     ValuePopVC.delegate = self;
     CGFloat contentHeight = 44.0f * remainingValues.count;
-    ValuePopVC.preferredContentSize = CGSizeMake(200.0f, contentHeight);
+    ValuePopVC.preferredContentSize = CGSizeMake(800.0f, contentHeight);
   }
 }
 
@@ -65,18 +77,67 @@ static NSString * const reuseIdentifier = @"ValueCell";
   return UIModalPresentationNone;
 }
 
-- (void)valueWasChosen:(NSString *)chosenValue
+- (void)valueWasChosen:(NSString *)chosenValue :(NSNumber *)inputValue
 {
   [self.navigationController dismissViewControllerAnimated:YES completion:nil];
   [visibleValues addObject:chosenValue];
+  [inputValues  setValue:inputValue forKey:chosenValue];
   [remainingValues removeObject:chosenValue];
   if (remainingValues.count == 2)
   {
     self.navigationItem.rightBarButtonItem.enabled = NO;
+
+    BOOL containsResistance = [visibleValues containsObject:@"resistance"];
+    BOOL containsVoltage = [visibleValues containsObject:@"voltage"];
+    BOOL containsCurrent = [visibleValues containsObject:@"current"];
+    BOOL containsPower = [visibleValues containsObject:@"power"];
+    
+    if (containsResistance)
+    {
+      if (containsVoltage)
+      {
+        [brain calculateUsingResistance:inputValues[@"resistance"] andVoltage:inputValues[@"voltage"]];
+      }
+      else if (containsCurrent)
+      {
+        [brain calculateUsingResistance:inputValues[@"resistance"] andCurrent:inputValues[@"current"]];
+      }
+      else if (containsPower)
+      {
+        [brain calculateUsingResistance:inputValues[@"resistance"] andPower:inputValues[@"power"]];
+      }
+    }
+    else if (containsVoltage)
+    {
+      if (containsCurrent)
+      {
+        [brain calculateUsingVoltage:inputValues[@"voltage"] andCurrent:inputValues[@"current"]];
+      }
+      else if (containsPower)
+      {
+        [brain calculateUsingVoltage:inputValues[@"voltage"] andPower:inputValues[@"power"]];
+      }
+    }
+    else if (containsCurrent)
+    {
+      if (containsPower)
+      {
+        [brain calculateUsingCurrent:inputValues[@"current"] andPower:inputValues[@"power"]];
+      }
+    }
+    
     [visibleValues addObjectsFromArray:remainingValues];
     [remainingValues removeAllObjects];
-    brainstuff here;
   }
+  [self.tableView reloadData];
+}
+
+- (void) brainDidCalculateMissingValues:(NSNumber *)resistanceInputValue :(NSNumber *)voltageInputValue :(NSNumber *)currentInputValue :(NSNumber *)powerInputValue
+{
+  [inputValues  setValue:resistanceInputValue forKey:@"resistance"];
+  [inputValues  setValue:voltageInputValue forKey:@"voltage"];
+  [inputValues  setValue:currentInputValue forKey:@"current"];
+  [inputValues  setValue:powerInputValue forKey:@"power"];
   [self.tableView reloadData];
 }
 
@@ -94,12 +155,13 @@ static NSString * const reuseIdentifier = @"ValueCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ValueCell" forIndexPath:indexPath];
   
-  NSString *ValueType = visibleValues[indexPath.item];
+  NSString *valueType = visibleValues[indexPath.item];
+  NSString *inputValue = [inputValues objectForKey:valueType];
   
-  cell.textLabel.text = ValueType;
-  cell.detailTextLabel.text = @"";
+  cell.textLabel.text = valueType;
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", inputValue];
   
   return cell;
 }

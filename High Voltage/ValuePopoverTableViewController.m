@@ -9,7 +9,10 @@
 #import "ValuePopoverTableViewController.h"
 #import "ValueCell.h"
 
-@interface ValuePopoverTableViewController ()
+@interface ValuePopoverTableViewController () <UITextFieldDelegate>
+{
+  NSNumber *inputValue;
+}
 
 @end
 
@@ -18,7 +21,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-
+  inputValue = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,11 +58,8 @@
   if (![textField.text isEqualToString:@""])
   {
     rc = YES;
-    if ([textField isFirstResponder])
-    {
-      [textField resignFirstResponder];
-      NSString *inputValue = textField.text; //+ dataType
-    }
+    [textField resignFirstResponder];
+    inputValue = [NSNumber numberWithFloat:[textField.text floatValue]];
   }
   return rc;
 }
@@ -68,8 +68,7 @@
 {
   [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
   NSString *chosenValue = self.values[indexPath.row];
-  [self.delegate valueWasChosen:chosenValue];
-  //maybe put in an alert here to input value
+  [self.delegate valueWasChosen:chosenValue :inputValue];
 }
 
 @end
