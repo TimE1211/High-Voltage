@@ -166,4 +166,18 @@
   return cell;
 }
 
+- (IBAction)resetTapped:(UIBarButtonItem *)sender
+{
+  brain = nil;
+  brain = [Brain new];
+  brain.delegate = self;
+  
+  [remainingValues addObjectsFromArray:[allValues allKeys]];
+  [visibleValues removeAllObjects];
+  [inputValues removeAllObjects];
+  [self.tableView reloadData];
+  
+  self.navigationItem.rightBarButtonItem.enabled = YES;
+}
+
 @end

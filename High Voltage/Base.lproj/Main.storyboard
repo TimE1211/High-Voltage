@@ -50,6 +50,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="uO7-sK-fXa">
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="qxI-y3-2p9">
+                            <connections>
+                                <action selector="resetTapped:" destination="fSD-mc-1ut" id="fdY-mL-KVa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VJH-oE-aCN">
                             <connections>
                                 <segue destination="gtY-sb-RRp" kind="popoverPresentation" identifier="ValuePopoverSegue" popoverAnchorBarButtonItem="VJH-oE-aCN" id="hlu-eE-iZv">
