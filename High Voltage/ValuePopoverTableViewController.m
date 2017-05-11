@@ -55,20 +55,36 @@
 {
   BOOL rc = NO;
   
-  if (![textField.text isEqualToString:@""])
+  if (![textField.text isEqualToString: @""])
   {
     rc = YES;
-    [textField resignFirstResponder];
     inputValue = [NSNumber numberWithFloat:[textField.text floatValue]];
+    
+//    if (![inputValue isEqual: nil])
+//    {
+//      [textField resignFirstResponder];
+//    }
+//    else
+//    {
+//      textField.text = @"Invalid Input";
+//    }
+    [textField resignFirstResponder];
   }
   return rc;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-  NSString *chosenValue = self.values[indexPath.row];
-  [self.delegate valueWasChosen:chosenValue :inputValue];
+  if (![inputValue isEqual: nil])
+  {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSString *chosenValue = self.values[indexPath.row];
+    [self.delegate valueWasChosen:chosenValue :inputValue];
+  }
+  else
+  {
+//    [self.tableView[indexPath].textField becomesFirstResponder];
+  }
 }
 
 @end
