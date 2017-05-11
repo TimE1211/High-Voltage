@@ -172,6 +172,7 @@
   brain = [Brain new];
   brain.delegate = self;
   
+  [remainingValues removeAllObjects];
   [remainingValues addObjectsFromArray:[allValues allKeys]];
   [visibleValues removeAllObjects];
   [inputValues removeAllObjects];
